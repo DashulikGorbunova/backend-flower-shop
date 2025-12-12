@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог - Flower Shop</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🌸 Каталог товаров</h1>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/catalog">Каталог</a>
+            <a href="/cart">Корзина</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Наши цветы и букеты</h2>
+        <div id="products"></div>
+    </main>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
+EOF
+
+# Создаем CSS
+cat > static/css/style.css << 'EOF'
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: linear-gradient(135deg, #ff66b2, #ff9999);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: white;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUQET - Доставка цветов</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <a href="#" class="logo">BOUQET<span>.</span></a>
+                <nav>
+                    <a href="#catalog" class="nav-link">Каталог</a>
+                    <a href="#builder" class="nav-link">Конструктор</a>
+                    <a href="#bouquets" class="nav-link">Авторские букеты</a>
+                    <a href="#cart" class="nav-link cart-link">🛒 Корзина</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>Идеальные цветы<br>для ваших моментов</h1>
+            <p>Бесплатная доставка при заказе от 1500₽</p>
+            <a href="#catalog" class="cta-button">Смотреть каталог</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🌺</div>
+                <h3>Свежие цветы</h3>
+                <p>Гарантия свежести и качества каждого цветка</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Быстрая доставка</h3>
+                <p>Доставим букет в течение 2 часов по городу</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Уникальный дизайн</h3>
+                <p>Создаем букеты по вашему индивидуальному заказу</p>
+            </div>
+        </section>
+
+        <section id="catalog">
+            <h2 class="section-title">Популярные букеты</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=300&h=300&fit=crop" alt="Романтический букет">
+                    </div>
+                    <h3>Романтический букет</h3>
+                    <div class="product-price">1200₽</div>
+                    <p class="product-description">Нежные розы и пионы для особенных моментов</p>
+                    <button class="add-to-cart" onclick="addToCart('Романтический букет', 1200)">В корзину</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1582794543139-8ac9cad0c8ce?w=300&h=300&fit=crop" alt="Весеннее настроение">
+                    </div>
+                    <h3>Весеннее настроение</h3>
+                    <div class="product-price">900₽</div>
+                    <p class="product-description">Свежие тюльпаны и гипсофила</p>
+                    <button class="add-to-cart" onclick="addToCart('Весеннее настроение', 900)">В корзину</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=300&h=300&fit=crop" alt="Классические розы">
+                    </div>
+                    <h3>Классические розы</h3>
+                    <div class="product-price">1500₽</div>
+                    <p class="product-description">11 красных роз в элегантной упаковке</p>
+                    <button class="add-to-cart" onclick="addToCart('Классические розы', 1500)">В корзину</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function addToCart(name, price) {
+            alert(`Товар "${name}" добавлен в корзину!`);
+            // Здесь будет логика добавления в корзину
+        }
+
+        // Простая анимация появления элементов
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.product-card, .feature-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
